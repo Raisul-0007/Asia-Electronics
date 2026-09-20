@@ -1,12 +1,16 @@
 import Link from "next/link";
+
 import {
-  Facebook,
-  Instagram,
-  Youtube,
   MapPin,
   Phone,
   Mail,
 } from "lucide-react";
+
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaYoutube,
+} from "react-icons/fa";
 
 export default function Footer() {
   return (
@@ -15,28 +19,24 @@ export default function Footer() {
       {/* Main Footer */}
       <div className="max-w-7xl mx-auto px-4 py-16">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Brand */}
           <div>
-
             <Link
               href="/"
-              className="text-2xl font-black inline-block mb-5"
+              className="text-2xl font-black"
             >
-              <span className="text-[#415FFF]">
-                Asia
-              </span>{" "}
-              Electronics
+              Asia <span className="text-[#415FFF]">Electronics</span>
             </Link>
 
-            <p className="text-gray-400 leading-7 max-w-sm">
-              Your trusted destination for mobile phones,
-              electronics and accessories. Quality products,
-              competitive prices and reliable customer service.
+            <p className="text-gray-400 mt-5 leading-7">
+              Your trusted destination for mobiles,
+              electronics and accessories. We provide
+              quality products at competitive prices.
             </p>
 
-            {/* Social */}
+            {/* Social Icons */}
             <div className="flex items-center gap-3 mt-6">
 
               <a
@@ -44,7 +44,7 @@ export default function Footer() {
                 aria-label="Facebook"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#415FFF] transition"
               >
-                <Facebook size={18} />
+                <FaFacebookF size={17} />
               </a>
 
               <a
@@ -52,7 +52,7 @@ export default function Footer() {
                 aria-label="Instagram"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#415FFF] transition"
               >
-                <Instagram size={18} />
+                <FaInstagram size={17} />
               </a>
 
               <a
@@ -60,16 +60,15 @@ export default function Footer() {
                 aria-label="YouTube"
                 className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center hover:bg-[#415FFF] transition"
               >
-                <Youtube size={18} />
+                <FaYoutube size={18} />
               </a>
 
             </div>
-
           </div>
+
 
           {/* Quick Links */}
           <div>
-
             <h3 className="text-lg font-bold mb-5">
               Quick Links
             </h3>
@@ -79,7 +78,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-white transition"
+                  className="hover:text-[#415FFF] transition"
                 >
                   Home
                 </Link>
@@ -88,7 +87,7 @@ export default function Footer() {
               <li>
                 <Link
                   href="/products"
-                  className="hover:text-white transition"
+                  className="hover:text-[#415FFF] transition"
                 >
                   Products
                 </Link>
@@ -96,58 +95,47 @@ export default function Footer() {
 
               <li>
                 <Link
-                  href="/cart"
-                  className="hover:text-white transition"
-                >
-                  Shopping Cart
-                </Link>
-              </li>
-
-              <li>
-                <Link
                   href="/contact"
-                  className="hover:text-white transition"
+                  className="hover:text-[#415FFF] transition"
                 >
-                  Contact Us
+                  Contact
                 </Link>
               </li>
 
               <li>
                 <Link
                   href="/dashboard"
-                  className="hover:text-white transition"
+                  className="hover:text-[#415FFF] transition"
                 >
                   Dashboard
                 </Link>
               </li>
 
             </ul>
-
           </div>
+
 
           {/* Categories */}
           <div>
-
             <h3 className="text-lg font-bold mb-5">
               Categories
             </h3>
 
             <ul className="space-y-3 text-gray-400">
 
-              <li>Mobile Phones</li>
-              <li>Chargers</li>
-              <li>Speakers</li>
+              <li>Mobile</li>
+              <li>Speaker</li>
+              <li>Charger</li>
+              <li>Cable</li>
               <li>TV Remote</li>
-              <li>Earphones</li>
-              <li>Cables & Accessories</li>
+              <li>Accessories</li>
 
             </ul>
-
           </div>
+
 
           {/* Contact */}
           <div>
-
             <h3 className="text-lg font-bold mb-5">
               Contact Us
             </h3>
@@ -161,13 +149,13 @@ export default function Footer() {
                   className="text-[#415FFF] shrink-0 mt-1"
                 />
 
-                <p className="text-gray-400 leading-6">
-                  Bashundhara City,
-                  <br />
-                  Panthapath, Dhaka
+                <p className="text-gray-400">
+                  Bashundhara City Shopping Complex,
+                  Dhaka, Bangladesh
                 </p>
 
               </div>
+
 
               <div className="flex gap-3">
 
@@ -185,6 +173,7 @@ export default function Footer() {
 
               </div>
 
+
               <div className="flex gap-3">
 
                 <Mail
@@ -193,38 +182,37 @@ export default function Footer() {
                 />
 
                 <a
-                  href="mailto:support@asiaelectronics.com"
-                  className="text-gray-400 hover:text-white transition break-all"
+                  href="mailto:info@asiaelectronics.com"
+                  className="text-gray-400 hover:text-white transition"
                 >
-                  support@asiaelectronics.com
+                  info@asiaelectronics.com
                 </a>
 
               </div>
 
             </div>
-
           </div>
 
         </div>
 
       </div>
 
-      {/* Bottom */}
+
+      {/* Copyright */}
       <div className="border-t border-white/10">
 
         <div className="max-w-7xl mx-auto px-4 py-6">
 
-          <div className="flex flex-col md:flex-row items-center justify-between gap-3 text-sm text-gray-500">
+          <div className="flex flex-col md:flex-row justify-between items-center gap-3 text-sm text-gray-500">
 
             <p>
               © {new Date().getFullYear()} Asia Electronics.
               All rights reserved.
             </p>
 
-            <div className="flex items-center gap-5">
-              <span>Privacy Policy</span>
-              <span>Terms & Conditions</span>
-            </div>
+            <p>
+              Mobile • Electronics • Accessories
+            </p>
 
           </div>
 

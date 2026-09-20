@@ -14,10 +14,11 @@ import { useState } from "react";
 
 import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
-import { products } from "@/data/products";
+import { useProducts } from "@/context/ProductContext";
 import { useCart } from "@/context/CartContext";
-
 export default function ProductDetailsPage() {
+  const { products } = useProducts();
+
   const params = useParams();
 
   const { addToCart } = useCart();

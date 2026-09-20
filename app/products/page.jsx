@@ -12,8 +12,7 @@ import {
 
 import Navbar from "@/components/Navbar";
 import ProductCard from "@/components/ProductCard";
-import { products } from "@/data/products";
-
+import { useProducts } from "@/context/ProductContext";
 const categories = [
   "All",
   "Mobile",
@@ -25,6 +24,8 @@ const categories = [
 const PRODUCTS_PER_PAGE = 8;
 
 export default function ProductsPage() {
+  const { products } = useProducts();
+
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("All");
   const [brand, setBrand] = useState("All");
