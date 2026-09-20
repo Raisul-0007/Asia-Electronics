@@ -1,13 +1,27 @@
+"use client";
+
 import Link from "next/link";
 import { ShoppingCart } from "lucide-react";
+import { useCart } from "@/context/CartContext";
 
 export default function ProductCard({ product }) {
+  const { addToCart } = useCart();
+
   const outOfStock = product.stock <= 0;
+
+  const handleAddToCart = () => {
+    if (!outOfStock) {
+      addToCart(product, 1);
+    }
+  };
 
   return (
     <div className="bg-white border rounded-2xl overflow-hidden group hover:shadow-xl transition">
 
+      {/* Image */}
+
       <Link href={`/products/${product.id}`}>
+
         <div className="h-64 bg-gray-100 overflow-hidden">
 
           <img
@@ -17,7 +31,10 @@ export default function ProductCard({ product }) {
           />
 
         </div>
+
       </Link>
+
+      {/* Content */}
 
       <div className="p-5">
 
@@ -26,10 +43,14 @@ export default function ProductCard({ product }) {
         </p>
 
         <Link href={`/products/${product.id}`}>
+
           <h3 className="font-bold text-lg mt-1 hover:text-[#415FFF]">
             {product.name}
           </h3>
+
         </Link>
+
+        {/* Price */}
 
         <div className="flex items-center gap-3 mt-3">
 
@@ -37,11 +58,15 @@ export default function ProductCard({ product }) {
             ৳{product.price.toLocaleString()}
           </span>
 
-          <span className="text-gray-400 line-through text-sm">
-            ৳{product.oldPrice.toLocaleString()}
-          </span>
+          {product.oldPrice && (
+            <span className="text-gray-400 line-through text-sm">
+              ৳{product.oldPrice.toLocaleString()}
+            </span>
+          )}
 
         </div>
+
+        {/* Stock */}
 
         <div className="mt-3">
 
@@ -57,20 +82,28 @@ export default function ProductCard({ product }) {
 
         </div>
 
+        {/* Add to Cart */}
+
         <button
           disabled={outOfStock}
+          onClick={handleAddToCart}
           className={`w-full mt-4 py-3 rounded-lg flex items-center justify-center gap-2 font-semibold transition ${
             outOfStock
               ? "bg-gray-200 text-gray-400 cursor-not-allowed"
               : "bg-[#415FFF] text-white hover:bg-blue-700"
           }`}
         >
+
           <ShoppingCart size={18} />
 
-          {outOfStock ? "Out of Stock" : "Add to Cart"}
+          {outOfStock
+            ? "Out of Stock"
+            : "Add to Cart"}
+
         </button>
 
       </div>
+
     </div>
   );
 }
