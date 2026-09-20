@@ -112,4 +112,42 @@ export const products = [
       charging: "Fast Charging",
     },
   },
+  
+  {
+  id: 7,
+  name: "Anker 25W Fast Charger",
+  brand: "Anker",
+  category: "Charger",
+  price: 2200,
+  oldPrice: 2500,
+  stock: 14,
+  image: "/images/products/anker-charger.jpg",
+  description:
+    "Fast and reliable 25W charger for smartphones and other devices.",
+  specifications: {
+    power: "25W",
+    port: "USB-C",
+    charging: "Fast Charging",
+    warranty: "1 Year",
+  },
+},
+
+{
+  id: 8,
+  name: "Samsung 25W Super Fast Charger",
+  brand: "Samsung",
+  category: "Charger",
+  price: 1800,
+  oldPrice: 2100,
+  stock: 9,
+  image: "/images/products/samsung-charger.jpg",
+  description:
+    "Samsung 25W super fast charging adapter.",
+  specifications: {
+    power: "25W",
+    port: "USB-C",
+    charging: "Super Fast Charging",
+    warranty: "Official Warranty",
+  },
+},
 ];
