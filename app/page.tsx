@@ -5,7 +5,7 @@ import BrandSection from "@/components/BrandSection";
 import CategorySection from "@/components/CategorySection";
 import ProductSection from "@/components/ProductSection";
 import WhyChooseUs from "@/components/WhyChooseUs";
-
+import Footer from "@/components/Footer";
 export default function page() {
   return (
     <>
@@ -52,6 +52,7 @@ export default function page() {
         </section>
 
       </main>
+      <Footer/>
     </>
   );
 }
